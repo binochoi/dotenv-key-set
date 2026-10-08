@@ -1,0 +1,68 @@
+{
+  "name": "dotenv-key-set",
+  "version": "0.0.1",
+  "description": "Set, update, or add a single key in a .env (dotenv) file from the CLI or Node.js — preserves comments, ordering, and other keys. Zero dependencies.",
+  "keywords": [
+    "dotenv",
+    "env",
+    ".env",
+    "env-file",
+    "dotenv-file",
+    "environment-variables",
+    "set-env",
+    "dotenv-key-set",
+    "dotenv-set",
+    "update-env",
+    "update-env-file",
+    "edit-env",
+    "upsert",
+    "env-writer",
+    "modify-dotenv",
+    "in-place",
+    "preserve-comments",
+    "cli",
+    "config",
+    "ci",
+    "scripts",
+    "version-bump",
+    "zero-dependencies"
+  ],
+  "homepage": "https://github.com/binochoi/dotenv-key-set#readme",
+  "bugs": {
+    "url": "https://github.com/binochoi/dotenv-key-set/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binochoi/dotenv-key-set.git"
+  },
+  "license": "MIT",
+  "author": "binochoi",
+  "type": "module",
+  "bin": {
+    "set-env": "./dist/cli.mjs"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepare": "obuild --stub",
+    "build:dist": "obuild",
+    "release": "pnpm build:dist && pnpm publish --ignore-scripts",
+    "clean": "rm -rf dist node_modules .turbo",
+    "lint": "oxlint ./src && tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "obuild": "^0.4.38",
+    "oxlint": "^1.67.0",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  }
+}
